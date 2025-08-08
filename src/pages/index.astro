@@ -1,0 +1,66 @@
+---
+import Header from '../components/Header.astro';
+import TextSlider from '../components/TextSlider.astro';
+import Hero from '../components/Hero.astro';
+import Products from '../components/Products.astro';
+import Countdown from '../components/Countdown.astro';
+import Combo from '../components/Combo.astro';
+import Boton from '../components/Boton.astro'
+import Gallery from '../components/Gallery.astro';
+import Mensaje from '../components/Mensaje.astro';
+import Sponsors from '../components/Sponsors.astro';
+import NameGenerator from '../components/NameGenerator.astro';
+import Footer from '../components/Footer.astro';
+import Modal from '../components/Modal.astro';
+import NameScript from '../components/NameScript.astro';
+
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibras Tour 2025</title>
+    
+    <!-- Descripción del sitio para motores de búsqueda -->
+    <meta name="description" content="Vibras Tour 2025: Únete a la fiesta más esperada del año. Música, tradición y buena vibra en un evento inolvidable." />
+
+    <!-- Favicon (asegúrate de que esté en la carpeta /public) -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- Tema y colores en móviles -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Redes sociales (Open Graph) -->
+    <meta property="og:title" content="Vibras Tour 2025" />
+    <meta property="og:description" content="Únete a la fiesta más esperada del año con música, tradición y buena vibra." />
+    <meta property="og:image" content="/logo.png" /> <!-- reemplaza si tienes una imagen específica -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tusitio.com" /> <!-- reemplaza con tu URL real -->
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/styles/global.css" />
+</head>
+
+<body class="bg-gray-50">
+    <Header />
+    <Hero />
+    <TextSlider />
+    <Products />
+    <Countdown />
+    <Combo />
+    <Boton />
+    <Gallery />
+    <Mensaje />
+    <Sponsors />
+    <NameGenerator />
+    <Footer />
+    <Modal />
+    <NameScript />
+
+    <script type="module" src="/scripts/main.ts"></script>
+</body>
+</html>

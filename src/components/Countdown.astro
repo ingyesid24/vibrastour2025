@@ -1,0 +1,85 @@
+
+<section class="w-full py-16 bg-white text-center">
+
+  <div id="countdown" class="flex justify-center gap-5 text-4xl md:text-5xl font-extrabold text-gray-500">
+    <div>
+      <div id="days">--</div>
+      <div class="text-sm font-semibold text-gray-500">DÍAS</div>
+    </div>
+    <span>:</span>
+    <div>
+      <div id="hours">--</div>
+      <div class="text-sm font-semibold text-gray-500">HORAS</div>
+    </div>
+    <span>:</span>
+    <div>
+      <div id="minutes">--</div>
+      <div class="text-sm font-semibold text-gray-500">MINUTOS</div>
+    </div>
+    <span>:</span>
+    <div>
+      <div id="seconds">--</div>
+      <div class="text-sm font-semibold text-gray-500">SEGUNDOS</div>
+    </div>
+  </div>
+
+  <p id="statusMessage" class="mt-8 text-9xl md:text-7xl font-extrabold text-black">
+    ⚡️FALTA POCO!!!🥁
+  </p>
+
+  <script is:inline>
+    const countdown = () => {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth();
+
+      // Fecha objetivo: día 27 del próximo mes
+      const targetDate = new Date(currentYear, currentMonth + 1, 27, 0, 0, 0);
+
+      const interval = setInterval(() => {
+        const now = new Date();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        const countdownEl = document.getElementById("countdown");
+        const messageEl = document.getElementById("statusMessage");
+
+        if (distance <= 0) {
+          clearInterval(interval);
+          countdownEl.innerHTML = `
+            <div><div>00</div><div class="text-sm font-semibold text-gray-500">DÍAS</div></div>
+            <span>:</span>
+            <div><div>00</div><div class="text-sm font-semibold text-gray-500">HORAS</div></div>
+            <span>:</span>
+            <div><div>00</div><div class="text-sm font-semibold text-gray-500">MINUTOS</div></div>
+            <span>:</span>
+            <div><div>00</div><div class="text-sm font-semibold text-gray-500">SEGUNDOS</div></div>
+          `;
+          messageEl.textContent = "🎉¡ES HOY!🚨";
+          return;
+        }
+
+        // Actualiza los valores
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+        // Estado del mensaje
+        if (days <= 0 && now.getDate() === 27) {
+          messageEl.textContent = "🎉¡ES HOY!🚨";
+        } else if (days <= 7) {
+          messageEl.textContent = "🔥TE ESTÁS QUEDANDO!!!⚠️";
+        } else {
+          messageEl.textContent = "⚡️FALTA POCO!!!🥁";
+        }
+      }, 1000);
+    };
+
+    countdown();
+  </script>
+</section>

@@ -1,0 +1,43 @@
+---
+const texto = '*  VIBRAS TOUR 2025  *  27 / SEP / 2025  *';
+const veces = 4;
+const contenido = Array(veces).fill(texto).join('     ');
+---
+
+<div class="w-full py-4 overflow-hidden fixed-bar relative">
+  <div class="flex animate-marquee whitespace-nowrap">
+    <span class="text-black text-2xl md:text-4xl font-extrabold mx-8">
+      {contenido}
+    </span>
+    <span class="text-black text-2xl md:text-4xl font-extrabold mx-8">
+      {contenido}
+    </span>
+  </div>
+</div>
+
+<style>
+.fixed-bar {
+  animation: backgroundColorLoop 25s ease-in-out infinite;
+}
+
+/* Movimiento continuo, sin espacio */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Solo se mueve la mitad porque hay duplicado */
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  display: flex;
+  min-width: 200%;
+}
+
+/* Transición de fondo suave */
+@keyframes backgroundColorLoop {
+  0%   { background-color: #22c55e; }   /* verde */
+  25%  { background-color: #facc15; }   /* amarillo */
+  50%  { background-color: #ef4444; }   /* rojo */
+  75%  { background-color: #e879f9; }   /* fucsia */
+  100% { background-color: #22c55e; }   /* vuelve a verde */
+}
+</style>

@@ -1,0 +1,56 @@
+---
+// No necesitas importar nada
+---
+
+<script type="module" is:inline>
+  import html2canvas from 'html2canvas';
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-nombre");
+    const input = document.getElementById("input-nombre");
+    const output = document.getElementById("nombre-renderizado");
+    const btnDescarga = document.getElementById("descargar-btn");
+
+    if (!form || !input || !output || !btnDescarga) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = input.value.trim();
+      if (!nombre) return;
+
+      output.innerHTML = "";
+
+      for (const letra of nombre) {
+        const span = document.createElement("span");
+        if (letra.toLowerCase() === "i") {
+          const img = document.createElement("img");
+          img.src = "/icons/rayo.svg";
+          img.alt = "rayo";
+          img.className = "w-6 h-6 inline-block align-middle";
+          span.appendChild(img);
+        } else {
+          span.textContent = letra;
+          span.className = "font-vibras text-6xl";
+        }
+        output.appendChild(span);
+      }
+
+      const cara = document.createElement("img");
+      cara.src = "/img/cara.png";
+      cara.alt = "carita";
+      cara.className = "w-10 h-10 inline-block align-middle ml-2";
+      output.appendChild(cara);
+
+      btnDescarga.classList.remove("hidden");
+    });
+
+    btnDescarga.addEventListener("click", () => {
+      html2canvas(output, { scale: 2 }).then((canvas) => {
+        const link = document.createElement("a");
+        link.download = "nombre-vibrastour.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  });
+</script>

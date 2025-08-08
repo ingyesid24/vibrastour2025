@@ -1,0 +1,38 @@
+<header class="bg-gray bg-opacity-10 backdrop-blur-lg text-blue py-4 sticky top-0 z-50 transition-all duration-300" id="header">
+    <nav class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="/logo-vibras.png" alt="Vibras Tour Logo" class="h-10 w-auto" />
+                <span class="text-yellow-300 text-xl"></span>
+            </div>
+            <div class="hidden md:flex space-x-6" id="nav-links">
+                <a href="#inicio" class="hover:text-yellow-300 transition-colors">Inicio</a>
+                <a href="#productos" class="hover:text-yellow-300 transition-colors">Productos</a>
+                <a href="#galeria" class="hover:text-yellow-300 transition-colors">Galería</a>
+                <a href="#sponsors" class="hover:text-yellow-300 transition-colors">Patrocinadores</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden flex-col space-y-4 mt-4" id="mobile-nav">
+            <a href="#inicio" class="hover:text-yellow-300 transition-colors">Inicio</a>
+            <a href="#productos" class="hover:text-yellow-300 transition-colors">Productos</a>
+            <a href="#galeria" class="hover:text-yellow-300 transition-colors">Galería</a>
+            <a href="#sponsors" class="hover:text-yellow-300 transition-colors">Patrocinadores</a>
+        </div>
+    </nav>
+</header>
+
+<style>
+    #header {
+        backdrop-filter: blur(10px);
+    }
+    @supports not (backdrop-filter: blur(10px)) {
+        #header {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+</style>

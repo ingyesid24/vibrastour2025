@@ -1,0 +1,70 @@
+---
+---
+<section id="sponsors" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nuestros Patrocinadores</h2>
+        <div class="slider overflow-hidden">
+            <div class="slider-track flex animate-scroll">
+                <!-- Primer grupo -->
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-ron.png" alt="Ron Viejo de Caldas" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-M.png" alt="Minimaximo" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-creative.png" alt="Cre4 Tive" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-chamar.png" alt="Chamar" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-magg.png" alt="Magg Pint" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-Big.png" alt="Big Food" class="w-full h-full object-contain" />
+                </div>
+                <!-- Segundo grupo para bucle continuo -->
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-ron.png" alt="Ron Viejo de Caldas" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-M.png" alt="Minimaximo" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-creative.png" alt="Cre4 Tive" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-chamar.png" alt="Chamar" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-magg.png" alt="Magg Pint" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-none w-60 h-40 mx-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <img src="/sponsor-Big.png" alt="Big Food" class="w-full h-full object-contain" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .slider {
+        width: 100%;
+        overflow: hidden;
+    }
+    .slider-track {
+        display: flex;
+        width: max-content; /* Asegura que todos los elementos quepan */
+    }
+    .animate-scroll {
+        animation: scroll 20s linear infinite;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } /* Desplaza la mitad para simular bucle */
+    }
+    .slider:hover .animate-scroll {
+        animation-play-state: paused;
+    }
+</style>

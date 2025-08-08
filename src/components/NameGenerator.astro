@@ -1,0 +1,37 @@
+---
+// src/components/NameGenerator.astro
+---
+
+<section class="py-20 bg-black text-white text-center" id="name-generator">
+  <h2 class="text-4xl font-bold mb-4">Genera tu nombre VibrasTour</h2>
+
+  <form id="form-nombre" class="flex flex-col items-center gap-4">
+    <input 
+      id="input-nombre"
+      type="text"
+      placeholder="Escribe tu nombre"
+      class="text-black p-2 rounded w-64 text-xl"
+    />
+    <button
+      type="submit"
+      class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500"
+    >
+      Generar
+    </button>
+  </form>
+
+  <!-- Zona generada -->
+  <div class="mt-10 flex flex-col items-center">
+    <div 
+      id="nombre-renderizado"
+      class="text-5xl font-vibras flex flex-wrap gap-2 justify-center items-center p-6 bg-white rounded"
+    ></div>
+
+    <button 
+      id="descargar-btn" 
+      class="mt-6 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded hidden"
+    >
+      Descargar PNG
+    </button>
+  </div>
+</section>
